@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main() {
@@ -8,7 +9,7 @@ int main() {
     cin >> fName;
     cin >> lName;
 
-    string fullName = fName + " " + lName;
+    string fullName = fName.append(lName);
 
     cout << fullName;
 
