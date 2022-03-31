@@ -13,7 +13,7 @@ public class PositiveNegative {
         ArrayList<Integer> negativeList = new ArrayList<>();
 
         for (int n : originalList) {
-            if (n > 1) {
+            if (n > 0) {
                 positiveList.add(n);
             } else if (n < 0) {
                 negativeList.add(n);
