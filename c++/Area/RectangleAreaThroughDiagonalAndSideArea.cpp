@@ -2,7 +2,13 @@
 #include <cmath>
 using namespace std;
 
-int main() {
+double rectangleAreaThroughDiagonalAndSideArea(int a, int d)
+{
+    return a * sqrt(pow(d, 2) - pow(a, 2));
+}
+
+int main()
+{
 
     double a, d;
 
@@ -11,9 +17,7 @@ int main() {
     cout << "d: ";
     cin >> d;
 
-    double area = a * sqrt(pow(d, 2) - pow(a, 2));
-
-    cout << "\nArea: " << area;
+    cout << "\nArea: " << rectangleAreaThroughDiagonalAndSideArea(a, d);
 
     return 0;
 }
