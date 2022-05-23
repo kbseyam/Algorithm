@@ -4,9 +4,16 @@ using namespace std;
 
 const double PI = 3.14159265359;
 
-int main() {
+float circleAreaCircleDescribedAroundAnArbitraryTriangle(float a, float b, float c)
+{
+    float p = (a + b + c) / 2.0;
+    return PI * pow((a * b * c) / (4 * sqrt(p * (p - a) * (p - b) * (p - c))), 2);
+}
 
-    int a, b, c;
+int main()
+{
+
+    float a, b, c;
 
     cout << "a: ";
     cin >> a;
@@ -15,11 +22,7 @@ int main() {
     cout << "c: ";
     cin >> c;
 
-    float p = (a + b + c) / 2.0;
-
-    float area = PI * pow((a * b * c) / (4 * sqrt(p * (p - a) * (p - b) * (p - c))), 2);
-
-    cout << "\nArea: " << round(area); 
+    cout << "\nArea: " << round(circleAreaCircleDescribedAroundAnArbitraryTriangle(a, b, c));
 
     return 0;
 }
