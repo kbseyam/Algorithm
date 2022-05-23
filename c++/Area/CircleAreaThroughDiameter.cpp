@@ -3,15 +3,19 @@ using namespace std;
 
 const float PI = 3.1415;
 
-int main() {
+float circleAreaThroughDiameter(float d)
+{
+    return (PI * (d * d)) / 4;
+}
+
+int main()
+{
 
     float d;
     cout << "Diameter: ";
     cin >> d;
 
-    float area = (PI * (d * d)) / 4;
-
-    cout << "Area: " << area;
+    cout << "Area: " << circleAreaThroughDiameter(d);
 
     return 0;
 }
