@@ -13,7 +13,7 @@ int readIntNumInRange(int from, int to) {
 int main() {
     
     cout << "Age (18 to 60): ";
-    readIntNumInRange(18, 60);
+    int age = readIntNumInRange(18, 60);
 
     return 0;
 }
