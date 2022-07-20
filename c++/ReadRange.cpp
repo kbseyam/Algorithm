@@ -3,10 +3,15 @@ using namespace std;
 
 int readIntNumInRange(int from, int to) {
     int number;
-    do {
-        cin >> number;
-    } while (number < from || number > to);
+    cin >> number;
 
+    while (number < from || number > to)
+    {
+        cout << "Wrong number,";
+        cout << " Please enter number again: ";
+        cin >> number;
+    }
+    
     return number;
 }
 
