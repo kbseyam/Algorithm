@@ -12,10 +12,12 @@ int main() {
 
     readArrayData(arr, length);
     printArrayData(arr, length);
+
+    int sum = calculateSumArray(arr, length);
     
     cout << "***************************************" << endl;
-    cout << "Sum = " << calculateSumArray(arr, length) << endl;
-    cout << "Average = " << calculateAvgArray(arr, length) << endl;
+    cout << "Sum = " << sum << endl;
+    cout << "Average = " << (float)sum / length << endl;
 
     return 0;
 }
@@ -45,8 +47,4 @@ int calculateSumArray(int arr[100], int length) {
     }
 
     return sum;
-}
-
-float calculateAvgArray(int arr[100], int length) {
-    return (float)calculateSumArray(arr, length) / length;
 }
