@@ -4,12 +4,7 @@
 #include <vector>
 using namespace std;
 
-struct stFound {
-    int countFound = 0;
-    vector<int> posFound;
-};
-
-stFound sequenceInString(string text, string sequence);
+pair<int, vector<int>> sequenceInString(string text, string sequence);
 void printPosFound(vector<int> v);
 
 int main() {
@@ -18,16 +13,17 @@ int main() {
     cout << "Sequence: ";
     cin >> str2;
 
-    stFound found = sequenceInString(str1, str2);
+    pair<int, vector<int>> found = sequenceInString(str1, str2);
 
-    cout << "Count Of Found: " << found.countFound << endl;
-    printPosFound(found.posFound);
+    cout << "Count Of Found: " << found.first << endl;
+    printPosFound(found.second);
 
     return 0;
 }
 
-stFound sequenceInString(string text, string sequence) {
-    stFound found;
+pair<int, vector<int>> sequenceInString(string text, string sequence) {
+    int countFound = 0;
+    vector<int> posFound;
 
     for (int i = 0; i < text.length() - sequence.length(); i++) {
         if (text[i] == sequence[0]) {
@@ -36,13 +32,13 @@ stFound sequenceInString(string text, string sequence) {
                 temp += text[j];
             }
             if (temp == sequence) {
-                found.countFound++;
-                found.posFound.push_back(i);
+                countFound++;
+                posFound.push_back(i);
             }
         }
     }
 
-    return found;
+    return make_pair(countFound, posFound);
 }
 
 void printPosFound(vector<int> v) {
